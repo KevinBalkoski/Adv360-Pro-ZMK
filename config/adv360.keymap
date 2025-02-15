@@ -21,40 +21,22 @@
             bindings = <&kp>, <&kp>;
         };
 
-        esc_gui: escape_gui {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp LG(ESC)>;
-            mods = <(MOD_LGUI)>;
-            keep-mods = <(MOD_LGUI)>;
+        esc_win: escape_win {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ESC_WIN";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
 
-        nav_left: nav_left {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp LS(LEFT)>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        nav_right: nav_right {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp LS(RIGHT)>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        nav_up: nav_up {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp UP>, <&kp LS(UP)>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        nav_down: nav_down {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOWN>, <&kp LS(DOWN)>;
-            mods = <(MOD_LSFT)>;
+        // Behaviors for mouse movement with alt modifier
+        mouse_move: mouse_move {
+            compatible = "zmk,behavior-mouse-key";
+            #binding-cells = <2>;
+            delay-ms = <0>;
+            time-to-max-speed-ms = <0>;
+            acceleration-exponent = <0>;
         };
     };
 
@@ -66,7 +48,7 @@
             bindings = <
                 &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
                 &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-                &esc_gui  &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL         &none &nav_left &nav_down &nav_up &nav_right &kp SEMI &kp SQT
+                &esc_win LGUI ESC &kp A &kp S &kp D   &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL         &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
                 &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                 &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
             >;
@@ -76,11 +58,13 @@
             display-name = "Fn";
             bindings = <
                 &kp F1    &kp F2       &kp F3      &kp F4      &kp F5      &kp F6 &tog 1                                                           &mo 3    &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-                &trans    &kp LG(DOT)  &trans      &trans      &trans      &trans &none                                                            &none    &trans       &trans       &trans       &trans       &kp PSCRN    &kp KP_N0  // {kh80}
-                &trans    &kp LC(A)    &kp LC(S)   &trans      &kp LC(F)   &trans &none           &trans    &trans    &trans    &trans            &none    &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp KP_N1    &kp KP_DOT // {kh81}
+                &trans    &kp LG(DOT)  &trans      &trans      &trans      &trans &none                                                            &none    &trans       &trans       &trans       &trans       &kp LC(PSCRN) &kp KP_N0  // {kh80}
+                &trans    &kp LC(A)    &kp LC(S)   &trans      &kp LC(F)   &trans &none           &trans    &trans    &trans    &trans            &none    &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans       &kp KP_DOT // {kh81}
                 &trans    &kp LC(Z)    &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans                           &trans    &trans                               &trans       &trans       &trans       &trans       &kp KP_ENTER &trans    // {kh7f}
-                &trans    &trans       &trans      &trans      &trans                    &trans    &trans    &trans    &trans    &trans    &trans                      &kp C_AL_CALC &kp LC(C_AL_CALC) &trans    &trans       &trans
+                &trans    &trans       &trans      &kp C_AL_CALC &kp LC(C_AL_CALC)          &trans    &trans    &trans    &trans    &trans    &trans                      &trans     &trans       &trans       &trans       &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         keypad {
@@ -104,25 +88,42 @@
                 &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                       &bl BL_INC   &bl BL_DEC   &none &none &none
             >;
         };
+    };
 
-        extra1 { 
-            display-name = "Red";    
-            status = "reserved";
+    // We need to handle mod-morphs for the complex key combinations
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        fn_shift {
+            if-layers = <2>;
+            then-layer = <4>;
         };
+        fn_alt {
+            if-layers = <2>;
+            then-layer = <5>;
+        };
+    };
 
-        extra2 { 
-            display-name = "Purple";    
-            status = "reserved";
-        };
+    // Additional layer for shift+fn combinations
+    fn_shift_layer {
+        bindings = <
+            // Include shift+fn combinations here
+            &kp LS(LEFT)     // shift+h
+            &kp LS(RIGHT)    // shift+l
+            &kp LS(DOWN)     // shift+j
+            &kp LS(UP)       // shift+k
+            &kp LC(LS(Z))    // shift+z
+            &kp LG(LS(C))    // shift+c
+        >;
+    };
 
-        extra3 { 
-            display-name = "Cyan";    
-            status = "reserved";
-        };
-
-        extra4 { 
-            display-name = "Yellow";    
-            status = "reserved";
-        };
+    // Additional layer for alt+fn combinations
+    fn_alt_layer {
+        bindings = <
+            // Include alt+fn combinations here
+            &mouse_move MOVE_LEFT 0    // alt+h
+            &mouse_move MOVE_RIGHT 0   // alt+l
+            &mouse_move MOVE_DOWN 0    // alt+j
+            &mouse_move MOVE_UP 0      // alt+k
+        >;
     };
 };
