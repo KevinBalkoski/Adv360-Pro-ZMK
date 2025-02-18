@@ -32,6 +32,15 @@
         };
     };
 
+    macros {
+        mute: mute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(A) &kp LC(D)>;
+            label = "MUTE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
