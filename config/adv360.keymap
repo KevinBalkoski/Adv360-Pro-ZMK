@@ -63,7 +63,7 @@
             bindings = <
 &kp EQUAL          &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
 &kp TAB            &kp Q       &kp W             &kp E        &kp R           &kp T     &mute                                                    &tog 5     &kp Y     &kp U            &kp I         &kp O              &kp P               &kp BSLH
-&esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &tog 4     &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
+&esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &tog 6    &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &tog 4     &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
 &kp LSHFT          &kp Z       &kp X             &kp C        &kp V           &kp B                          &kp HOME      &kp PG_UP                        &kp N     &kp M            &kp COMMA     &kp DOT            &kp FSLH            &kp RSHFT
 &mo 2              &kp GRAVE   &kp GRAVE         &kp LEFT     &kp RIGHT                 &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE            &kp DOWN_ARROW   &kp UP_ARROW  &kp LBKT           &kp RBKT            &mo 2
             >;
@@ -129,9 +129,9 @@
             display-name = "Cyan";
             status = "reserved";
             bindings = <
-&kp EQUAL          &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
+&kp F1             &kp F2      &kp F3            &kp F4       &kp F5          &kp F6    &tog 1                                                   &mo 3      &kp F7    &kp F8           &kp F9        &kp F10            &kp F11             &kp F12
 &kp TAB            &kp Q       &kp W             &kp E        &kp R           &kp T     &mute                                                    &tog 5     &kp Y     &kp U            &kp I         &kp O              &kp P               &kp BSLH
-&esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &mo6      &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &tog 8     &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
+&esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &tog 6    &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &tog 8     &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
 &kp LSHFT          &kp Z       &kp X             &kp C        &kp V           &kp B                          &kp HOME      &kp PG_UP                        &kp N     &kp M            &kp COMMA     &kp DOT            &kp FSLH            &kp RSHFT
 &mo 2              &kp GRAVE   &kp GRAVE         &kp LEFT     &kp RIGHT                 &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE            &kp DOWN_ARROW   &kp UP_ARROW  &kp LBKT           &kp RBKT            &mo 2
             >;
