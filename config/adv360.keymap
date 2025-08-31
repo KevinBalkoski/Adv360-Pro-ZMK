@@ -106,22 +106,22 @@
             display-name = "Red";
             status = "reserved";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans    &trans  &trans   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp HOME  &trans  &kp END  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans    &trans  &trans   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans            &trans  &trans   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans        &trans         &trans         &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp HOME      &kp END        &kp PG_UP      &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp HOME      &kp END        &kp PAGE_DOWN  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LA(LEFT)  &kp LA(RIGHT)  &trans         &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                &trans         &trans         &trans  &trans  &trans
             >;
         };
 
         mouse {
             display-name = "Purple";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                        &trans    &trans  &trans          &trans          &trans           &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                        &trans    &trans  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans      &trans  &trans  &trans    &trans  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &mkp RCLK        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans      &trans                    &trans  &msc SCRL_DOWN  &mmv MOVE_DOWN  &trans           &trans           &trans
-&trans  &trans  &trans  &trans  &trans          &mkp MB4  &trans  &trans      &trans  &trans  &mkp MB5          &trans          &trans          &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                      &trans    &trans  &trans          &trans          &trans            &trans           &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans                                      &trans    &trans  &msc SCRL_UP    &mmv MOVE_UP    &msc MOVE_X(-15)  &msc MOVE_X(15)  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &mkp RCLK        &trans
+&trans  &trans  &trans  &trans     &trans     &trans                  &trans      &trans                    &trans  &msc SCRL_DOWN  &mmv MOVE_DOWN  &trans            &trans           &trans
+&trans  &trans  &trans  &trans     &trans             &trans  &trans  &trans      &trans  &trans  &mkp MB4          &trans          &trans          &trans
             >;
         };
 
