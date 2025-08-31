@@ -54,28 +54,28 @@
 
     combos {
         compatible = "zmk,combos";
-        
+
         combo_home {
             timeout-ms = <50>;
-            key-positions = <17 16>;
+            key-positions = <23 22>;
             bindings = <&kp HOME>;
         };
-        
+
         combo_end {
             timeout-ms = <50>;
-            key-positions = <17 18>;
+            key-positions = <23 24>;
             bindings = <&kp END>;
         };
-        
+
         combo_page_up {
             timeout-ms = <50>;
-            key-positions = <18 9>;
+            key-positions = <9 22>;
             bindings = <&kp PG_UP>;
         };
-        
+
         combo_page_down {
             timeout-ms = <50>;
-            key-positions = <18 17>;
+            key-positions = <22 23>;
             bindings = <&kp PG_DN>;
         };
     };
@@ -86,7 +86,7 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL          &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
+&lt 5 EQUAL       &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
 &kp TAB            &kp Q       &kp W             &kp E        &kp R           &kp T     &mute                                                    &none      &kp Y     &kp U            &kp I         &kp O              &kp P               &kp BSLH
 &esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
 &kp LSHFT          &kp Z       &kp X             &kp C        &kp V           &kp B                          &kp HOME      &kp PG_UP                        &kp N     &kp M            &kp COMMA     &kp DOT            &kp FSLH            &kp RSHFT
@@ -141,7 +141,13 @@
 
         extra2 {
             display-name = "Purple";
-            status = "reserved";
+            bindings = <
+&trans          &trans      &trans            &trans       &trans          &trans  &trans                                                   &trans           &trans  &trans              &trans         &trans                &trans              &trans
+&trans          &trans      &trans            &trans       &trans          &trans  &trans                                                   &trans           &trans  &trans              &mmv MOVE_UP   &trans                &trans              &trans
+&trans          &trans      &trans            &trans       &trans          &trans  &trans     &trans  &trans      &trans  &trans           &trans           &mmv MOVE_LEFT      &mkp LCLK      &mmv MOVE_RIGHT       &trans              &trans
+&trans          &trans      &trans            &trans       &trans          &trans                     &trans      &trans                                    &trans              &mmv MOVE_DOWN &trans                &trans              &trans
+&trans          &trans      &trans            &trans       &trans                  &trans  &trans     &trans      &trans  &trans           &trans                          &trans         &trans                &trans           &trans              &trans
+            >;
         };
 
         extra3 {
