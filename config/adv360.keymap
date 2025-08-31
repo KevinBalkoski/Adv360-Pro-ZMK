@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
@@ -86,7 +87,7 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&lt 5 EQUAL       &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
+&lt 5 EQUAL        &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
 &kp TAB            &kp Q       &kp W             &kp E        &kp R           &kp T     &mute                                                    &none      &kp Y     &kp U            &kp I         &kp O              &kp P               &kp BSLH
 &esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
 &kp LSHFT          &kp Z       &kp X             &kp C        &kp V           &kp B                          &kp HOME      &kp PG_UP                        &kp N     &kp M            &kp COMMA     &kp DOT            &kp FSLH            &kp RSHFT
@@ -139,14 +140,14 @@
             >;
         };
 
-        extra2 {
+        mouse {
             display-name = "Purple";
             bindings = <
-&trans          &trans      &trans            &trans       &trans          &trans  &trans                                                   &trans           &trans  &trans              &trans         &trans                &trans              &trans
-&trans          &trans      &trans            &trans       &trans          &trans  &trans                                                   &trans           &trans  &trans              &mmv MOVE_UP   &trans                &trans              &trans
-&trans          &trans      &trans            &trans       &trans          &trans  &trans     &trans  &trans      &trans  &trans           &trans           &mmv MOVE_LEFT      &mkp LCLK      &mmv MOVE_RIGHT       &trans              &trans
-&trans          &trans      &trans            &trans       &trans          &trans                     &trans      &trans                                    &trans              &mmv MOVE_DOWN &trans                &trans              &trans
-&trans          &trans      &trans            &trans       &trans                  &trans  &trans     &trans      &trans  &trans           &trans                          &trans         &trans                &trans           &trans              &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                        &trans    &trans          &trans          &trans           &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                        &trans    &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans      &trans  &trans  &trans    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &mkp RCLK        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans      &trans                    &msc SCRL_DOWN  &mmv MOVE_DOWN  &trans           &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &mkp MB4  &trans  &trans      &trans  &trans  &mkp MB5                  &trans          &trans           &trans
             >;
         };
 
