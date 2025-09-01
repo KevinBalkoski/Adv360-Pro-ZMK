@@ -117,11 +117,11 @@
         mouse {
             display-name = "Purple";
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans  &trans                                      &trans    &trans  &trans          &trans          &trans            &trans           &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans                                      &trans    &trans  &msc SCRL_UP    &mmv MOVE_UP    &msc MOVE_X(-15)  &msc MOVE_X(15)  &trans
-&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT   &mkp RCLK        &trans
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans      &trans                    &trans  &msc SCRL_DOWN  &mmv MOVE_DOWN  &trans            &trans           &trans
-&trans  &trans  &trans  &trans     &trans             &trans  &trans  &trans      &trans  &trans  &mkp MB4          &trans          &trans          &trans
+&trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)          &kp LG(NUMBER_3)  &kp LG(NUMBER_4)           &kp LG(N5)  &trans                                      &trans  &kp LG(NUMBER_6)  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)  &trans  &trans
+&trans  &trans            &kp LS(LC(LEFT_BRACKET))  &mmv MOVE_UP      &kp LS(LC(RIGHT_BRACKET))  &trans      &trans                                      &trans  &trans            &mkp MB4          &mkp MB5          &trans      &trans  &trans
+&trans  &trans            &mmv MOVE_LEFT            &mmv MOVE_DOWN    &mmv MOVE_RIGHT            &trans      &trans  &trans  &trans      &trans  &trans  &trans  &msc MOVE_Y(20)   &mkp LCLK         &mkp RCLK         &trans      &trans  &trans
+&trans  &kp LC(Z)         &kp LC(X)                 &kp LC(C)         &kp LC(V)                  &trans                      &trans      &trans                  &msc MOVE_Y(-20)  &msc MOVE_X(-20)  &msc MOVE_X(20)   &trans      &trans  &trans
+&trans  &trans            &trans                    &kp LG(LEFT)      &kp LG(RIGHT)                          &trans  &trans  &trans      &trans  &trans  &trans                    &kp LG(DOWN)      &kp LG(UP_ARROW)  &trans
             >;
         };
 
