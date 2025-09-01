@@ -42,6 +42,34 @@
             require-prior-idle-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
+
+        uu_mouse: uu_mouse {
+            compatible = "zmk,behavior-tap-dance";
+            label = "UU_MOUSE";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&tog 5>;
+        };
+
+        yy_nav: yy_nav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "YY_NAV";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&tog 4>;
+        };
+
+        qq_num: qq_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "QQ_NUM";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&tog 1>;
+        };
+
+        caps_tap: caps_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPS_TAP";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&mt CAPSLOCK CAPSLOCK>;
+        };
     };
 
     macros {
@@ -62,9 +90,9 @@
             display-name = "Base";
             bindings = <
 &kp EQUAL          &kp N1      &kp N2            &kp N3       &kp N4          &kp N5    &tog 1                                                   &mo 3      &kp N6    &kp N7           &kp N8        &kp N9             &kp N0              &kp MINUS
-&kp TAB            &kp Q       &kp W             &kp E        &kp R           &kp T     &mute                                                    &tog 5     &kp Y     &kp U            &kp I         &kp O              &kp P               &kp BSLH
+&kp TAB            &qq_num     &kp W             &kp E        &kp R           &kp T     &mute                                                    &tog 5     &yy_nav   &uu_mouse        &kp I         &kp O              &kp P               &kp BSLH
 &esc_win LGUI ESC  &hm LALT A  &hm LEFT_SHIFT S  &hm LCTRL D  &hm LEFT_GUI F  &hm2 2 G  &tog 6    &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &tog 4     &hm2 2 H  &hm RIGHT_GUI J  &hm RCTRL K   &hm RIGHT_SHIFT L  &hm RIGHT_ALT SEMI  &kp SQT
-&kp LSHFT          &kp Z       &kp X             &kp C        &kp V           &kp B                          &kp HOME      &kp PG_UP                        &kp N     &kp M            &kp COMMA     &kp DOT            &kp FSLH            &kp RSHFT
+&caps_tap          &kp Z       &kp X             &kp C        &kp V           &kp B                          &kp HOME      &kp PG_UP                        &kp N     &kp M            &kp COMMA     &kp DOT            &kp FSLH            &kp RSHFT
 &mo 2              &kp GRAVE   &kp GRAVE         &kp LEFT     &kp RIGHT                 &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE            &kp DOWN_ARROW   &kp UP_ARROW  &kp LBKT           &kp RBKT            &mo 2
             >;
         };
