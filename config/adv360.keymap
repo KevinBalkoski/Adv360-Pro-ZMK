@@ -83,6 +83,27 @@
             bindings = <&kp LA(A) &kp LC(D)>;
             label = "MUTE";
         };
+
+        email: email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp B &kp A &kp L &kp K &kp O &kp S &kp K &kp I &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL";
+        };
+
+        email_work: email_work {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp E &kp V &kp I &kp N &kp AT &kp N &kp O &kp C &kp K &kp L &kp O &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL_WORK";
+        };
+
+        trip_tick: trip_tick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+            label = "TRIP_TICK";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -115,11 +136,11 @@
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2  &kp F3                    &kp F4                     &kp F5         &kp F6         &tog 1                                                                   &mo 3   &kp F7          &kp F8              &kp F9              &kp F10          &kp F11             &kp F12
-&trans  &trans  &kp LEFT_BRACE            &kp LEFT_BRACKET           &kp LG(LC(R))  &kp LA(LC(T))  &none                                                                    &none   &trans          &trans              &kp RIGHT_BRACKET   &kp RIGHT_BRACE  &trans              &trans
-&trans  &trans  &kp LS(LC(LEFT_BRACKET))  &kp LS(LC(RIGHT_BRACKET))  &kp LC(LA(F))  &trans         &none                 &trans  &trans      &trans  &trans                 &none   &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW        &kp RIGHT_ARROW  &trans              &kp GRAVE
-&trans  &trans  &trans                    &trans                     &kp LA(LC(V))  &trans                                       &trans      &trans                                 &trans          &trans              &kp C_VOL_DN        &kp C_VOLUME_UP  &kp LA(LS(LC(F1)))  &trans
-&trans  &trans  &trans                    &trans                     &trans                        &kp LC(LEFT_BRACKET)  &trans  &trans      &trans  &kp LC(LS(LA(ENTER)))  &trans                  &kp LA(LC(LS(F3)))  &kp LS(LA(LC(F2)))  &trans           &trans              &trans
+&kp F1  &kp F2      &kp F3                    &kp F4                     &kp F5         &kp F6         &tog 1                                                                   &mo 3   &kp F7          &kp F8              &kp F9              &kp F10          &kp F11             &kp F12
+&trans  &trans      &kp LEFT_BRACE            &kp LEFT_BRACKET           &kp LG(LC(R))  &kp LA(LC(T))  &none                                                                    &none   &email          &trans              &kp RIGHT_BRACKET   &kp RIGHT_BRACE  &trans              &trans
+&trans  &trans      &kp LS(LC(LEFT_BRACKET))  &kp LS(LC(RIGHT_BRACKET))  &kp LC(LA(F))  &trans         &none                 &trans  &trans      &trans  &trans                 &none   &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW        &kp RIGHT_ARROW  &trans              &trip_tick
+&trans  &trans      &trans                    &trans                     &kp LA(LC(V))  &trans                                       &trans      &trans                                 &trans          &trans              &kp C_VOL_DN        &kp C_VOLUME_UP  &kp LA(LS(LC(F1)))  &trans
+&trans  &trip_tick  &trip_tick                &trans                     &trans                        &kp LC(LEFT_BRACKET)  &trans  &trans      &trans  &kp LC(LS(LA(ENTER)))  &trans                  &kp LA(LC(LS(F3)))  &kp LS(LA(LC(F2)))  &trans           &trans              &trans
             >;
         };
 
@@ -149,11 +170,11 @@
         mouse {
             display-name = "Purple";
             bindings = <
-&trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)          &kp LG(NUMBER_3)  &kp LG(NUMBER_4)           &kp LG(N5)  &trans                                      &trans  &kp LG(NUMBER_6)  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)  &trans  &trans
-&trans  &trans            &kp LS(LC(LEFT_BRACKET))  &mmv MOVE_UP      &kp LS(LC(RIGHT_BRACKET))  &trans      &trans                                      &trans  &yy_mouse         &mkp MB4          &mkp MB5          &trans      &trans  &trans
-&trans  &trans            &mmv MOVE_LEFT            &mmv MOVE_DOWN    &mmv MOVE_RIGHT            &trans      &trans  &trans  &trans      &trans  &trans  &trans  &msc MOVE_Y(20)   &mkp LCLK         &mkp RCLK         &trans      &trans  &trans
-&trans  &kp LC(Z)         &kp LC(X)                 &kp LC(C)         &kp LC(V)                  &trans                      &trans      &trans                  &msc MOVE_Y(-20)  &msc MOVE_X(-20)  &msc MOVE_X(20)   &trans      &trans  &trans
-&trans  &trans            &trans                    &kp LG(LEFT)      &kp LG(RIGHT)                          &trans  &trans  &trans      &trans  &trans  &trans                    &kp LG(DOWN)      &kp LG(UP_ARROW)  &trans
+&trans  &kp LG(NUMBER_1)   &kp LG(NUMBER_2)          &kp LG(NUMBER_3)  &kp LG(NUMBER_4)           &kp LG(N5)        &trans                                      &trans  &kp LG(NUMBER_6)  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)  &trans  &trans
+&trans  &trans             &kp LS(LC(LEFT_BRACKET))  &mmv MOVE_UP      &kp LS(LC(RIGHT_BRACKET))  &trans            &trans                                      &trans  &yy_mouse         &mkp MB4          &mkp MB5          &trans      &trans  &trans
+&trans  &mmv MOVE_X(-600)  &mmv MOVE_LEFT            &mmv MOVE_DOWN    &mmv MOVE_RIGHT            &mmv MOVE_X(600)  &trans  &trans  &trans      &trans  &trans  &trans  &msc MOVE_Y(20)   &mkp LCLK         &mkp RCLK         &trans      &trans  &trans
+&trans  &kp LC(Z)          &kp LC(X)                 &kp LC(C)         &kp LC(V)                  &trans                            &trans      &trans                  &msc MOVE_Y(-20)  &msc MOVE_X(-20)  &msc MOVE_X(20)   &trans      &trans  &trans
+&trans  &trans             &trans                    &kp LG(LEFT)      &kp LG(RIGHT)                                &trans  &trans  &trans      &trans  &trans  &trans                    &kp LG(DOWN)      &kp LG(UP_ARROW)  &trans
             >;
         };
 
