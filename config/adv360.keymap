@@ -47,6 +47,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "UU_MOUSE";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp U>, <&tog 5>;
         };
 
@@ -54,6 +55,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "YY_NAV";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp Y>, <&tog 4>;
         };
 
@@ -61,6 +63,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QQ_NUM";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp Q>, <&tog 1>;
         };
 
@@ -68,7 +71,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_TAP";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&mt CAPSLOCK CAPSLOCK>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
         };
     };
 
